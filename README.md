@@ -105,6 +105,10 @@ here you can configure logging options, timeout interval, accept status codes, d
 ## Code Generation
 Dispatcher contains code generation script to create your request subclasses
 
+###xCode Template
+unzip Dispatchder Request.xctemplate.zip and install template
+how-to template installation: https://discussions.apple.com/thread/2802293?start=0&tstart=0
+
 ###DISPATCHER_CODEGEN.sh
 
  how to use:
