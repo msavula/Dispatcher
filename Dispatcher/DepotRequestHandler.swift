@@ -10,6 +10,13 @@ import Foundation
 
 class DepotRequestHandler: RequestHandler {
     
+    let serialQueues = [
+        DispatchQueue(label: "com.hive.serialQueue_01"),
+        DispatchQueue(label: "com.hive.serialQueue_02"),
+        DispatchQueue(label: "com.hive.serialQueue_03"),
+        DispatchQueue(label: "com.hive.serialQueue_04")
+    ]
+    
     // MARK: globals
     // enclosing defaults structure
     private struct depotDefaults {
@@ -18,7 +25,9 @@ class DepotRequestHandler: RequestHandler {
         init() {
             let plistPath = Bundle.main.path(forResource: "Dispatcher-info", ofType: "plist")
             if let plist = NSDictionary(contentsOfFile: plistPath!) as? [String: Any] {
-                logDepotOperations = plist["LOG_DEPOT_OPERATIONS"] as? Bool
+                #if DEBUG
+                    logDepotOperations = plist["LOG_DEPOT_OPERATIONS"] as? Bool
+                #endif
             }
         }
     }
@@ -33,8 +42,8 @@ class DepotRequestHandler: RequestHandler {
         }
         
         currentRequests.insert(request)
-        
-        DispatchQueue.global(qos: .userInitiated).async {
+        let queue = serialQueues[Int(arc4random_uniform(UInt32(serialQueues.count)))] // get one of our 4 serial queues, all requests will be equally distributed
+        queue.async {
             super.processRequest(request: request, error: error)
         }
     }
