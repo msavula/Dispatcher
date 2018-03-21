@@ -81,6 +81,7 @@ class ServiceRequestHandler: RequestHandler {
             logNetworkRequest(request: serviceRequest)
         }
         
+        let methodStart = Date()
         let semaphore = DispatchSemaphore.init(value: 0)
         let task = URLSession.shared.dataTask(with: serviceRequest) {
             data, response, networkError in
@@ -101,6 +102,11 @@ class ServiceRequestHandler: RequestHandler {
                 }
             }
             
+            if let logNetwork = ServiceRequestHandler.defaults.logNetwork, logNetwork == true {
+                let methodFinish = Date()
+                let executionTime = methodFinish.timeIntervalSince(methodStart)
+                print("[NETWORK REQUEST] \(serviceRequest.url?.absoluteString ?? "FATAL - invalid URL") execution time: \(executionTime)")
+            }
             semaphore.signal()
         }
         

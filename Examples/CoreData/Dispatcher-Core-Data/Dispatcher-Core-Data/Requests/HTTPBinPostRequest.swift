@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
-class HTTPBinPostRequest: Request {
+class HTTPBinPostRequest: CachableRequest {
     
     class HTTPBinPostResponse: Response {
         
@@ -18,8 +19,14 @@ class HTTPBinPostRequest: Request {
             try super.parseResponse(response: response, data: data)
             
             if let jsonDictionary = json as? Dictionary<String, Any> {
-                user = DataModel.sharedDatabaseStorage.parseUserData(data: jsonDictionary)
+                user = DataModel.shared.parseUserData(data: jsonDictionary)
             }
+        }
+    }
+    
+    override var fetchRequest: NSFetchRequest<NSFetchRequestResult> {
+        get {
+            return User.fetchRequest(id: userId)
         }
     }
     
@@ -37,6 +44,8 @@ class HTTPBinPostRequest: Request {
         }
     }
     
+    var userId: Int = 2016
+    
     override func serviceURLRequest() -> URLRequest {
         var request = super.serviceURLRequest()
         
@@ -44,9 +53,15 @@ class HTTPBinPostRequest: Request {
         request.httpMethod = "POST"
         
         let originalString = "https://upload.wikimedia.org/wikipedia/en/7/76/Darth_Vader.jpg"
-        let escapedString = originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let escapedString = originalString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         
-        request.httpBody = "userId=2016&name=John Doe&birthdate=10/18/1962&bio=long time ago in a galaxy far, far away&avatar=\(escapedString)".data(using: .utf8)
+        let payload = ["userId": userId, "name": "John Doe", "birthdate": "10/18/1962", "bio": "long time ago in a galaxy far, far away", "avatar": escapedString] as [String : Any]
+        do {
+            let postData = try JSONSerialization.data(withJSONObject: payload, options: [])
+            request.httpBody = postData
+        } catch {
+            // TODO: throw error
+        }
         
         return request
     }

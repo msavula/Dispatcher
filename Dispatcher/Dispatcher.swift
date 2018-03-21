@@ -13,7 +13,9 @@ class Dispatcher {
     private var headRequestHandler = DepotRequestHandler()
     
     private init() {
-        headRequestHandler.nextHandler = ServiceRequestHandler()
+        let cacheHandler = CacheRequestHandler()
+        headRequestHandler.nextHandler = cacheHandler
+        cacheHandler.nextHandler = ServiceRequestHandler()
     }
     
     public func processRequest(request: Request) {

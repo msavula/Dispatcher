@@ -14,6 +14,14 @@
 		CE1280F61DDB3C810077C763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1280F41DDB3C810077C763 /* LaunchScreen.storyboard */; };
 		CE1281011DDB3C810077C763 /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1281001DDB3C810077C763 /* DispatcherTests.swift */; };
 		CE12810C1DDB3C810077C763 /* DispatcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12810B1DDB3C810077C763 /* DispatcherUITests.swift */; };
+		CE369FE520626FFC00817BE6 /* CachableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE369FE220626FFC00817BE6 /* CachableRequest.swift */; };
+		CE369FE620626FFC00817BE6 /* CacheRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE369FE320626FFC00817BE6 /* CacheRequestHandler.swift */; };
+		CE369FE720626FFC00817BE6 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE369FE420626FFC00817BE6 /* ErrorParser.swift */; };
+		CE369FF02062709100817BE6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE369FE92062709100817BE6 /* DataModel.swift */; };
+		CE369FF12062709100817BE6 /* NSManagedObject+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE369FEA2062709100817BE6 /* NSManagedObject+Common.swift */; };
+		CE369FF22062709100817BE6 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE369FEB2062709100817BE6 /* DataModel.xcdatamodeld */; };
+		CE369FF32062709100817BE6 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE369FEE2062709100817BE6 /* User+CoreDataProperties.swift */; };
+		CE369FF42062709100817BE6 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE369FEF2062709100817BE6 /* User+CoreDataClass.swift */; };
 		CE67BDFD1E02892E00133263 /* HTTPBinGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67BDFC1E02892E00133263 /* HTTPBinGetRequest.swift */; };
 		CE67BE4C1E02999600133263 /* DepotRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67BE461E02999600133263 /* DepotRequestHandler.swift */; };
 		CE67BE4D1E02999600133263 /* Dispatcher-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE67BE471E02999600133263 /* Dispatcher-info.plist */; };
@@ -54,6 +62,14 @@
 		CE1281071DDB3C810077C763 /* DispatcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DispatcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE12810B1DDB3C810077C763 /* DispatcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherUITests.swift; sourceTree = "<group>"; };
 		CE12810D1DDB3C810077C763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE369FE220626FFC00817BE6 /* CachableRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachableRequest.swift; sourceTree = "<group>"; };
+		CE369FE320626FFC00817BE6 /* CacheRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheRequestHandler.swift; sourceTree = "<group>"; };
+		CE369FE420626FFC00817BE6 /* ErrorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
+		CE369FE92062709100817BE6 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		CE369FEA2062709100817BE6 /* NSManagedObject+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Common.swift"; sourceTree = "<group>"; };
+		CE369FEC2062709100817BE6 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		CE369FEE2062709100817BE6 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CE369FEF2062709100817BE6 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CE67BDFC1E02892E00133263 /* HTTPBinGetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPBinGetRequest.swift; sourceTree = "<group>"; };
 		CE67BE461E02999600133263 /* DepotRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepotRequestHandler.swift; sourceTree = "<group>"; };
 		CE67BE471E02999600133263 /* Dispatcher-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Dispatcher-info.plist"; sourceTree = "<group>"; };
@@ -117,6 +133,7 @@
 				CE1280F21DDB3C810077C763 /* Assets.xcassets */,
 				CE1280F41DDB3C810077C763 /* LaunchScreen.storyboard */,
 				CE1280F71DDB3C810077C763 /* Info.plist */,
+				CE369FE82062709100817BE6 /* DataModel */,
 				CE67BE451E02999600133263 /* Dispatcher */,
 				CE67BDFB1E02890D00133263 /* Requests */,
 			);
@@ -141,6 +158,27 @@
 			path = DispatcherUITests;
 			sourceTree = "<group>";
 		};
+		CE369FE82062709100817BE6 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE369FE92062709100817BE6 /* DataModel.swift */,
+				CE369FEA2062709100817BE6 /* NSManagedObject+Common.swift */,
+				CE369FEB2062709100817BE6 /* DataModel.xcdatamodeld */,
+				CE369FED2062709100817BE6 /* Entities */,
+			);
+			name = DataModel;
+			path = "../../CoreData/Dispatcher-Core-Data/Dispatcher-Core-Data/DataModel";
+			sourceTree = "<group>";
+		};
+		CE369FED2062709100817BE6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CE369FEE2062709100817BE6 /* User+CoreDataProperties.swift */,
+				CE369FEF2062709100817BE6 /* User+CoreDataClass.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		CE67BDFB1E02890D00133263 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +190,9 @@
 		CE67BE451E02999600133263 /* Dispatcher */ = {
 			isa = PBXGroup;
 			children = (
+				CE369FE220626FFC00817BE6 /* CachableRequest.swift */,
+				CE369FE320626FFC00817BE6 /* CacheRequestHandler.swift */,
+				CE369FE420626FFC00817BE6 /* ErrorParser.swift */,
 				CE67BE461E02999600133263 /* DepotRequestHandler.swift */,
 				CE67BE471E02999600133263 /* Dispatcher-info.plist */,
 				CE67BE481E02999600133263 /* Dispatcher.swift */,
@@ -226,20 +267,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Nick Savula";
 				TargetAttributes = {
 					CE1280E71DDB3C810077C763 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					CE1280FB1DDB3C810077C763 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CE1280E71DDB3C810077C763;
 					};
 					CE1281061DDB3C810077C763 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CE1280E71DDB3C810077C763;
 					};
@@ -301,11 +345,19 @@
 				CE67BE501E02999600133263 /* RequestHandler.swift in Sources */,
 				CE1280EE1DDB3C810077C763 /* ViewController.swift in Sources */,
 				CE67BE4F1E02999600133263 /* Request.swift in Sources */,
+				CE369FF22062709100817BE6 /* DataModel.xcdatamodeld in Sources */,
+				CE369FE520626FFC00817BE6 /* CachableRequest.swift in Sources */,
 				CE67BDFD1E02892E00133263 /* HTTPBinGetRequest.swift in Sources */,
+				CE369FF42062709100817BE6 /* User+CoreDataClass.swift in Sources */,
+				CE369FF02062709100817BE6 /* DataModel.swift in Sources */,
 				CE1280EC1DDB3C810077C763 /* AppDelegate.swift in Sources */,
+				CE369FF32062709100817BE6 /* User+CoreDataProperties.swift in Sources */,
+				CE369FE720626FFC00817BE6 /* ErrorParser.swift in Sources */,
 				CE67BE4C1E02999600133263 /* DepotRequestHandler.swift in Sources */,
 				CE67BE511E02999600133263 /* ServiceRequestHandler.swift in Sources */,
 				CE67BE4E1E02999600133263 /* Dispatcher.swift in Sources */,
+				CE369FF12062709100817BE6 /* NSManagedObject+Common.swift in Sources */,
+				CE369FE620626FFC00817BE6 /* CacheRequestHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +427,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_CXX0X_EXTENSIONS = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -392,6 +446,8 @@
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -459,7 +515,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_CXX0X_EXTENSIONS = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -476,6 +534,8 @@
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -529,7 +589,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nick.savula.Dispatcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -541,7 +602,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nick.savula.Dispatcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -554,7 +616,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nick.savula.DispatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dispatcher.app/Dispatcher";
 			};
 			name = Debug;
@@ -568,7 +631,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nick.savula.DispatcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dispatcher.app/Dispatcher";
 			};
 			name = Release;
@@ -581,7 +645,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nick.savula.DispatcherUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Dispatcher;
 			};
 			name = Debug;
@@ -594,7 +659,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nick.savula.DispatcherUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Dispatcher;
 			};
 			name = Release;
@@ -639,6 +705,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE369FEB2062709100817BE6 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE369FEC2062709100817BE6 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = CE369FEC2062709100817BE6 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE1280E01DDB3C810077C763 /* Project object */;
 }

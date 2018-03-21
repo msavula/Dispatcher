@@ -10,10 +10,28 @@ import Foundation
 import CoreData
 
 @objc(User)
-public class User: NSManagedObject {
+public class User: NSManagedObject, ModelMapper {
     
-    func parseNode(node: Dictionary<String, Any>) {
-        userId = Int32(node["userId"] as! String)!
+    static var entityName: String {
+        get {
+            return "User"
+        }
+    }
+    
+    static var idKey: String {
+        get {
+            return "userId"
+        }
+    }
+    
+    static func fetchRequest(id: Int) -> NSFetchRequest<NSFetchRequestResult> {
+        let fetchRequest:NSFetchRequest<User> = User.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "\(idKey) == \(id)")
+        return fetchRequest as! NSFetchRequest<NSFetchRequestResult>
+    }
+    
+    func parse(node: Dictionary<AnyHashable, Any>) {
+        userId = Int32(node["userId"] as! Int)
         name = node["name"] as? String
         bio = node["bio"] as? String
         avatar = node["avatar"] as? String

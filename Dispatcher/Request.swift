@@ -7,59 +7,29 @@
 //
 
 import Foundation
+import CoreData
 
 class Request {
+    
+    static var errorParser: ErrorParsing = ErrorParser()
     
     // MARK response
     class Response {
         
-        enum WebserviceError: Error {
-            case genericError(reason: String, message: String)
-            case unknownError
-        }
-        
-        enum ParsingError: Error {
-            case nothingToParse
+        enum ResponseError: Error {
+            case invalidResponse
         }
         
         private(set) var json: Any?
-        
-        private func isSuccessfulHTTPStatus(status: Int) -> Bool {
-            if let successStatusCodes = Request.defaults.successStatusCodes {
-                for acceptableStatus in successStatusCodes {
-                    if acceptableStatus.contains("-") {
-                        let components = acceptableStatus.components(separatedBy: "-")
-                        if components.count == 2 {
-                            if let startRange = Int(components[0]), startRange <= status, let endRange = Int(components[1]), endRange >= status {
-                                return true
-                            }
-                        }
-                    } else {
-                        // we have a single code
-                        if Int(acceptableStatus) == status {
-                            return true
-                        }
-                    }
-                }
-            }
-            
-            return false
-        }
         
         func parseResponse(response: URLResponse?, data: Data?) throws {
             if let httpResonse = response as? HTTPURLResponse {
                 if let jsonData = data {
                     try json = JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
                     
-                    if !isSuccessfulHTTPStatus(status: httpResonse.statusCode) {
-                        if let jsonDictionary = json as? Dictionary<String, Any>,  let reason = jsonDictionary["error"] as? String, let message = jsonDictionary["error_description"] as? String {
-                            throw WebserviceError.genericError(reason: reason, message: message)
-                        } else {
-                            throw WebserviceError.unknownError
-                        }
-                    }
-                } else if !isSuccessfulHTTPStatus(status: httpResonse.statusCode) {
-                    throw ParsingError.nothingToParse
+                    try errorParser.parseError(json: json, statusCode: httpResonse.statusCode)
+                } else {
+                    throw ResponseError.invalidResponse
                 }
             }
         }
@@ -69,7 +39,6 @@ class Request {
     // enclosing defaults structure
     private struct requestDefaults {
         private(set) var timeoutInterval: TimeInterval?
-        private(set) var successStatusCodes: Array<String>?
         private(set) var method: String?
         private(set) var headers: Dictionary<String, String>?
         
@@ -77,7 +46,6 @@ class Request {
             let plistPath = Bundle.main.path(forResource: "Dispatcher-info", ofType: "plist")
             if let plist = NSDictionary(contentsOfFile: plistPath!) as? [String: Any] {
                 timeoutInterval = plist["TIMEOUT_INTERVAL"] as? TimeInterval
-                successStatusCodes = plist["SUCESS_STATUS_CODES"] as? Array
                 method = plist["DEFAULT_METHOD"] as? String
                 headers = plist["HTTP_HEADERS"] as? Dictionary
             }
@@ -117,6 +85,7 @@ class Request {
     
     // reporting
     var completion: ((_ request: Request, _ error: Error?) -> Void)?
+    var cacheCompletion: ((_ cache: [NSManagedObject]) -> Void)?
     var cancelation: (() -> Void)?
     
     func cancel() -> Bool {

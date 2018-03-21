@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         request.completion = {
             reqeust, error in
             if let response = request.response as? HTTPBinGetRequest.HTTPBinGetResponse {
-                print("origin: \(response.origin) url: \(response.url)")
+                print("origin: \(String(describing: response.origin)) url: \(String(describing: response.url))")
             }
         }
         Dispatcher.shared.processRequest(request: request)

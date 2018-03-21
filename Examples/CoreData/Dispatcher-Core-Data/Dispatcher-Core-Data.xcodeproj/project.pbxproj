@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87311C561F68FC010000BE65 /* CachableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87311C551F68FC010000BE65 /* CachableRequest.swift */; };
+		87311C581F68FDAD0000BE65 /* NSManagedObject+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87311C571F68FDAD0000BE65 /* NSManagedObject+Common.swift */; };
 		CE04F1381E02B50200F59E60 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE04F1361E02B50200F59E60 /* DataModel.xcdatamodeld */; };
 		CE04F13A1E02B50D00F59E60 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F1391E02B50D00F59E60 /* DataModel.swift */; };
 		CE04F1461E02D31500F59E60 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F1441E02D31500F59E60 /* User+CoreDataClass.swift */; };
 		CE04F1471E02D31500F59E60 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F1451E02D31500F59E60 /* User+CoreDataProperties.swift */; };
 		CE04F1491E02D35100F59E60 /* HTTPBinPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F1481E02D35100F59E60 /* HTTPBinPostRequest.swift */; };
 		CE04F14F1E04212200F59E60 /* HTTPBinUtf8Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F14E1E04212200F59E60 /* HTTPBinUtf8Request.swift */; };
+		CE3FA2F51FF244D700BBE662 /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3FA2F41FF244D700BBE662 /* ErrorParser.swift */; };
+		CE4E78D11F68F76F00B9E1E8 /* CacheRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4E78D01F68F76F00B9E1E8 /* CacheRequestHandler.swift */; };
 		CE67BE0B1E02990B00133263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67BE0A1E02990B00133263 /* AppDelegate.swift */; };
 		CE67BE0D1E02990B00133263 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67BE0C1E02990B00133263 /* ViewController.swift */; };
 		CE67BE101E02990B00133263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE67BE0E1E02990B00133263 /* Main.storyboard */; };
@@ -46,12 +50,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		87311C551F68FC010000BE65 /* CachableRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachableRequest.swift; sourceTree = "<group>"; };
+		87311C571F68FDAD0000BE65 /* NSManagedObject+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Common.swift"; sourceTree = "<group>"; };
 		CE04F1371E02B50200F59E60 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		CE04F1391E02B50D00F59E60 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		CE04F1441E02D31500F59E60 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CE04F1451E02D31500F59E60 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CE04F1481E02D35100F59E60 /* HTTPBinPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPBinPostRequest.swift; sourceTree = "<group>"; };
 		CE04F14E1E04212200F59E60 /* HTTPBinUtf8Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPBinUtf8Request.swift; sourceTree = "<group>"; };
+		CE3FA2F41FF244D700BBE662 /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
+		CE4E78D01F68F76F00B9E1E8 /* CacheRequestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheRequestHandler.swift; sourceTree = "<group>"; };
 		CE67BE071E02990B00133263 /* Dispatcher-Core-Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dispatcher-Core-Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE67BE0A1E02990B00133263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE67BE0C1E02990B00133263 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -164,12 +172,15 @@
 		CE67BE521E0299B500133263 /* Dispatcher */ = {
 			isa = PBXGroup;
 			children = (
-				CE67BE531E0299B500133263 /* DepotRequestHandler.swift */,
 				CE67BE541E0299B500133263 /* Dispatcher-info.plist */,
 				CE67BE551E0299B500133263 /* Dispatcher.swift */,
 				CE67BE561E0299B500133263 /* Request.swift */,
 				CE67BE571E0299B500133263 /* RequestHandler.swift */,
+				CE67BE531E0299B500133263 /* DepotRequestHandler.swift */,
+				CE4E78D01F68F76F00B9E1E8 /* CacheRequestHandler.swift */,
 				CE67BE581E0299B500133263 /* ServiceRequestHandler.swift */,
+				87311C551F68FC010000BE65 /* CachableRequest.swift */,
+				CE3FA2F41FF244D700BBE662 /* ErrorParser.swift */,
 			);
 			name = Dispatcher;
 			path = ../../../../Dispatcher;
@@ -189,6 +200,7 @@
 			children = (
 				CE04F1361E02B50200F59E60 /* DataModel.xcdatamodeld */,
 				CE04F1391E02B50D00F59E60 /* DataModel.swift */,
+				87311C571F68FDAD0000BE65 /* NSManagedObject+Common.swift */,
 				CE04F13F1E02CE9D00F59E60 /* Entities */,
 			);
 			path = DataModel;
@@ -257,20 +269,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Nick Savula";
 				TargetAttributes = {
 					CE67BE061E02990B00133263 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					CE67BE1A1E02990B00133263 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CE67BE061E02990B00133263;
 					};
 					CE67BE251E02990B00133263 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CE67BE061E02990B00133263;
 					};
@@ -329,6 +344,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87311C581F68FDAD0000BE65 /* NSManagedObject+Common.swift in Sources */,
+				87311C561F68FC010000BE65 /* CachableRequest.swift in Sources */,
 				CE67BE591E0299B500133263 /* DepotRequestHandler.swift in Sources */,
 				CE04F1381E02B50200F59E60 /* DataModel.xcdatamodeld in Sources */,
 				CE67BE0D1E02990B00133263 /* ViewController.swift in Sources */,
@@ -339,7 +356,9 @@
 				CE04F1471E02D31500F59E60 /* User+CoreDataProperties.swift in Sources */,
 				CE67BE5B1E0299B500133263 /* Dispatcher.swift in Sources */,
 				CE04F13A1E02B50D00F59E60 /* DataModel.swift in Sources */,
+				CE3FA2F51FF244D700BBE662 /* ErrorParser.swift in Sources */,
 				CE67BE0B1E02990B00133263 /* AppDelegate.swift in Sources */,
+				CE4E78D11F68F76F00B9E1E8 /* CacheRequestHandler.swift in Sources */,
 				CE04F1491E02D35100F59E60 /* HTTPBinPostRequest.swift in Sources */,
 				CE04F14F1E04212200F59E60 /* HTTPBinUtf8Request.swift in Sources */,
 			);
@@ -411,7 +430,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_CXX0X_EXTENSIONS = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -428,6 +449,8 @@
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -501,7 +524,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_ASSIGN_ENUM = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_CXX0X_EXTENSIONS = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -518,6 +543,8 @@
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
@@ -577,7 +604,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nick.savula.Dispatcher-Core-Data";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -589,7 +617,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nick.savula.Dispatcher-Core-Data";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -602,7 +631,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nick.savula.Dispatcher-Core-DataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dispatcher-Core-Data.app/Dispatcher-Core-Data";
 			};
 			name = Debug;
@@ -616,7 +646,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nick.savula.Dispatcher-Core-DataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dispatcher-Core-Data.app/Dispatcher-Core-Data";
 			};
 			name = Release;
@@ -629,7 +660,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nick.savula.Dispatcher-Core-DataUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "Dispatcher-Core-Data";
 			};
 			name = Debug;
@@ -642,7 +674,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nick.savula.Dispatcher-Core-DataUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "Dispatcher-Core-Data";
 			};
 			name = Release;
