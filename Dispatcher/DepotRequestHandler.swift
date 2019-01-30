@@ -11,10 +11,10 @@ import Foundation
 class DepotRequestHandler: RequestHandler {
     
     let serialQueues = [
-        DispatchQueue(label: "com.hive.serialQueue_01"),
-        DispatchQueue(label: "com.hive.serialQueue_02"),
-        DispatchQueue(label: "com.hive.serialQueue_03"),
-        DispatchQueue(label: "com.hive.serialQueue_04")
+        DispatchQueue(label: "com.dispatcher.serialQueue_01"),
+        DispatchQueue(label: "com.dispatcher.serialQueue_02"),
+        DispatchQueue(label: "com.dispatcher.serialQueue_03"),
+        DispatchQueue(label: "com.dispatcher.serialQueue_04")
     ]
     
     // MARK: globals

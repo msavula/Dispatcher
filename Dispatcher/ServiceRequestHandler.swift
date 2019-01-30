@@ -9,53 +9,6 @@
 import Foundation
 
 class ServiceRequestHandler: RequestHandler {
-    
-    // MARK: loggin
-    func logNetworkRequest(request: URLRequest) {
-        
-        var headers = ""
-        if let headerFields = request.allHTTPHeaderFields {
-            for (key, value) in headerFields {
-                headers.append("    \(key): \(value)\n")
-            }
-        }
-        
-        var body = "    <empty>"
-        if let data = request.httpBody, data.count > 0 {
-            if data.count > 2048 {
-                body = String("    <\(data.count) bytes>")
-            } else if let dataString = String(data: data, encoding: .utf8) {
-                body = dataString
-            }
-        }
-        
-        if let url = request.url?.absoluteString, let method = request.httpMethod {
-            print("\n----- [NETWORK REQUEST] -----\n  URL: \(url)\n  METHOD: \(method)\n  HEADER FIELDS\n\(headers)  BODY\n  \(body)\n-----------------------------\n")
-        }
-    }
-    
-    func logNetworkResponse(response: URLResponse?, error: Error?, data: Data?) {
-        if let networkError = error {
-            print("\n----- [NETWORK RESPONSE] -----\n  ERROR: \(networkError.localizedDescription)\n")
-        } else if let networkResponse = response as? HTTPURLResponse  {
-            var headers = ""
-            for (key, value) in networkResponse.allHeaderFields {
-                headers.append("    \(key): \(value)\n")
-            }
-            
-            var body = "    <empty>"
-            if let responseData = data, responseData.count > 0 {
-                if let dataString = String(data: responseData, encoding: .utf8) {
-                    body = dataString
-                }
-            }
-            
-            if let url = networkResponse.url?.absoluteString {
-                print("\n----- [NETWORK RESPONSE] -----\n  URL: \(url)\n  STATUS CODE: \(networkResponse.statusCode)\n  HEADER FIELDS\n\(headers)  BODY\n    \(body)\n------------------------------\n")
-            }
-        }
-    }
-    
     // MARK: globals
     // enclosing defaults structure
     private struct serviceDefaults {
@@ -64,7 +17,9 @@ class ServiceRequestHandler: RequestHandler {
         init() {
             let plistPath = Bundle.main.path(forResource: "Dispatcher-info", ofType: "plist")
             if let plist = NSDictionary(contentsOfFile: plistPath!) as? [String: Any] {
-                logNetwork = plist["LOG_NETWORK"] as? Bool
+                #if DEBUG
+                    logNetwork = plist["LOG_NETWORK"] as? Bool
+                #endif
             }
         }
     }
@@ -78,7 +33,7 @@ class ServiceRequestHandler: RequestHandler {
         let serviceRequest = request.serviceURLRequest()
         
         if let logNetwork = ServiceRequestHandler.defaults.logNetwork, logNetwork == true {
-            logNetworkRequest(request: serviceRequest)
+            NetworkLogger.logNetworkRequest(request: serviceRequest)
         }
         
         let methodStart = Date()
@@ -87,7 +42,7 @@ class ServiceRequestHandler: RequestHandler {
             data, response, networkError in
             
             if let logNetwork = ServiceRequestHandler.defaults.logNetwork, logNetwork == true {
-                self.logNetworkResponse(response: response, error: networkError, data: data)
+                NetworkLogger.logNetworkResponse(response: response, error: networkError, data: data)
             }
             
             if request.canceled {

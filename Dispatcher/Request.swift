@@ -16,20 +16,13 @@ class Request {
     // MARK response
     class Response {
         
-        enum ResponseError: Error {
-            case invalidResponse
-        }
-        
         private(set) var json: Any?
         
         func parseResponse(response: URLResponse?, data: Data?) throws {
             if let httpResonse = response as? HTTPURLResponse {
-                if let jsonData = data {
+                if let jsonData = data, jsonData.count > 0 {
                     try json = JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
-                    
                     try errorParser.parseError(json: json, statusCode: httpResonse.statusCode)
-                } else {
-                    throw ResponseError.invalidResponse
                 }
             }
         }
