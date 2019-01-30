@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		87311C561F68FC010000BE65 /* CachableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87311C551F68FC010000BE65 /* CachableRequest.swift */; };
 		87311C581F68FDAD0000BE65 /* NSManagedObject+Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87311C571F68FDAD0000BE65 /* NSManagedObject+Common.swift */; };
+		874CED762201BE2700804B13 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874CED752201BE2700804B13 /* NetworkLogger.swift */; };
 		CE04F1381E02B50200F59E60 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE04F1361E02B50200F59E60 /* DataModel.xcdatamodeld */; };
 		CE04F13A1E02B50D00F59E60 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F1391E02B50D00F59E60 /* DataModel.swift */; };
 		CE04F1461E02D31500F59E60 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE04F1441E02D31500F59E60 /* User+CoreDataClass.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		87311C551F68FC010000BE65 /* CachableRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachableRequest.swift; sourceTree = "<group>"; };
 		87311C571F68FDAD0000BE65 /* NSManagedObject+Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Common.swift"; sourceTree = "<group>"; };
+		874CED752201BE2700804B13 /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		CE04F1371E02B50200F59E60 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		CE04F1391E02B50D00F59E60 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		CE04F1441E02D31500F59E60 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				CE67BE581E0299B500133263 /* ServiceRequestHandler.swift */,
 				87311C551F68FC010000BE65 /* CachableRequest.swift */,
 				CE3FA2F41FF244D700BBE662 /* ErrorParser.swift */,
+				874CED752201BE2700804B13 /* NetworkLogger.swift */,
 			);
 			name = Dispatcher;
 			path = ../../../../Dispatcher;
@@ -274,6 +277,7 @@
 				TargetAttributes = {
 					CE67BE061E02990B00133263 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = U57H59L9YQ;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -350,6 +354,7 @@
 				CE04F1381E02B50200F59E60 /* DataModel.xcdatamodeld in Sources */,
 				CE67BE0D1E02990B00133263 /* ViewController.swift in Sources */,
 				CE67BE5E1E0299B500133263 /* ServiceRequestHandler.swift in Sources */,
+				874CED762201BE2700804B13 /* NetworkLogger.swift in Sources */,
 				CE04F1461E02D31500F59E60 /* User+CoreDataClass.swift in Sources */,
 				CE67BE5D1E0299B500133263 /* RequestHandler.swift in Sources */,
 				CE67BE5C1E0299B500133263 /* Request.swift in Sources */,
@@ -600,6 +605,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U57H59L9YQ;
 				INFOPLIST_FILE = "Dispatcher-Core-Data/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nick.savula.Dispatcher-Core-Data";
@@ -613,6 +619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U57H59L9YQ;
 				INFOPLIST_FILE = "Dispatcher-Core-Data/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nick.savula.Dispatcher-Core-Data";
